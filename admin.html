@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
   <title>CRONOS AGÊNCIA - admin</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/estilo.css" />
-  <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
@@ -20,15 +20,35 @@
       <h1>Painel administrativo</h1>
     </div>
   </header>
+
+  <!--Modal-->
+
+  <div class="modal" id="modal">
+    <div class="aba-curso">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <div>
+        <h1>Cadastrar Curso!</h1>
+        <form id="form" class="modal-field">
+          <ul>
+            <li><label>Nome do curso:</label></li>
+            <input type="text" class="modal-field" id="nome" data-index="new" required>
+            <li><label>Descrição do Curso:</label></li>
+            <textarea id="descricao" cols="60" rows="3" class="modal-field" required></textarea>
+            <li><input type="file" id="imagem" accept="image/*" class="modal-field" required /></li>
+          </ul>
+          <button class="btn btn-primary" id="salvar">Confirmar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <section id="servicos" class="py-5 mb-5">
     <div class="container">
       <div class="row">
         <div class="col">
-
-
           <h3>Serviços</h3>
-          <button class="btn btn-primary">Adicionar novo</button>
-          <table class="table my-5">
+          <button class="btn btn-primary" id="open-modal" onclick="abrirModal()">Adicionar novo</button>
+          <table id="tableCurso" class="table my-5">
             <thead>
               <tr>
                 <td>Nome</td>
@@ -38,33 +58,35 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr id="curso1">
                 <td>Desenvolvimento Web</td>
                 <td><img src="imagens/ilustra-web.png" class="img-fluid" /></td>
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
-                  <button class="btn btn-secondary m-1">editar</button>
-                  <button class="btn btn-danger m-1">excluir</button>
+                  <button class="btn btn-secondary m-1 btn1">Editar</button>
+                  <button class="btn btn-danger m-1 btn2" id="btc1">Excluir</button>
                 </td>
               </tr>
-              <tr>
+              <tr id="curso2">
                 <td>Marketing Digital</td>
                 <td><img src="imagens/ilustra-marketing.png" class="img-fluid" /></td>
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
-                  <button class="btn btn-secondary m-1">editar</button>
-                  <button class="btn btn-danger m-1">excluir</button>
+                  <button class="btn btn-secondary m-1 btn1">Editar</button>
+                  <button class="btn btn-danger m-1 btn2" id="btc2">Excluir</button>
                 </td>
               </tr>
-              <tr>
+              <tr id="curso3">
                 <td>Consultoria UX</td>
                 <td><img src="imagens/ilustra-ux.png" class="img-fluid" /></td>
                 <td>Consequatur debitis ipsa numquam illum placeat quod deleniti.</td>
                 <td>
-                  <button class="btn btn-secondary m-1">editar</button>
-                  <button class="btn btn-danger m-1">excluir</button>
+                  <button class="btn btn-secondary m-1 btn1">Editar</button>
+                  <button class="btn btn-danger m-1 btn2" id="btc3">Excluir</button>
                 </td>
               </tr>
+            <tbody id="corpo">
+            </tbody>
             </tbody>
           </table>
         </div>
@@ -75,7 +97,7 @@
     <div class="container text-center">
       <p class="m-0">
         copyright 2021
-        <img src="imagens/favicon.png" width="30" alt="" /> agência CRONOS
+        agência CRONOS
       </p>
     </div>
   </footer>
@@ -86,7 +108,7 @@
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-  <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
